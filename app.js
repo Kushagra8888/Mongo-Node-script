@@ -1,9 +1,12 @@
 import mongoose from 'mongoose';
+import mongoConfig from "./mongo.config"
 import Employee from "./models/employee"
 
-mongoose.connect('mongodb://localhost/node-mongoose', {
-  user: "",
-  pass: ""
+const { connectionString, user, pass } = mongoConfig
+
+mongoose.connect(connectionString, {
+  user,
+  pass
 });
 
 
